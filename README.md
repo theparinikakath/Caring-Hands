@@ -65,7 +65,7 @@ Caring Hands is a platform designed to streamline the donation, recycling, and d
 - **Other Tools**: JWT for authentication, pbkdf2 algorithm for password hashing
 
 ## Contributing
-Feel free to fork the project and submit pull requests with new features or improvements! :)
+Feel free to fork the project and submit pull requests with new features or improvements! 😊😊
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
