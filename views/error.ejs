@@ -1,0 +1,11 @@
+<% layout("/layouts/boilerplate") %>
+<div class="row mt-3">
+    <div class="alert alert-danger col-8 offset-2" role="alert">
+        <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:">
+            <use xlink:href="#exclamation-triangle-fill"/>
+        </svg>
+        <h4 class="alert-heading"><%= message %></h4>
+        <!-- Use stack instead of trace, as trace might not exist -->
+        <p><%= err.stack || 'No stack trace available.' %></p>
+    </div>
+</div>

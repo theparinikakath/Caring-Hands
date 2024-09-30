@@ -1,0 +1,82 @@
+<% layout("/layouts/boilerplate") %>
+
+<body>
+    <!-- Hero Section -->
+    <section class="hero-section text-center text-white d-flex align-items-center justify-content-center position-relative" style="height: 100vh; background-size: cover; background-attachment: fixed; background-position: center; background-image: url('https://images.unsplash.com/photo-1505455184862-554165e5f6ba?w=1600&auto=format&fit=crop&q=80');">
+        <div class="overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1; animation: fadeIn 2s;"></div>
+        
+        <div class="container" style="position: relative; z-index: 2;">
+            <h1 class="display-3 font-weight-bold mb-4 animate-text" style="text-shadow: 2px 2px 8px rgba(0,0,0,0.7); opacity: 0; transform: translateY(50px); transition: all 1s ease-in-out;">
+                Donate/Recycle/Dispose your old clothes
+            </h1>
+            <p class="lead mb-5 animate-text" style="font-size: 1.3rem; text-shadow: 1px 1px 6px rgba(0,0,0,0.6); opacity: 0; transform: translateY(50px); transition: all 1s ease-in-out 0.5s;">
+                Wanna donate/recycle your unused/old clothes?
+            </p>
+            <a href="/listings/new" class="btn btn-lg btn-outline-light animate-btn" style="padding: 10px 25px; border-radius: 30px; transition: all 0.1s ease-in-out; opacity: 0; transform: translateY(50px); transition: all 0.5s ease-in-out 0.2s;">
+                YES
+            </a>
+        </div>
+
+        <!-- Scroll Down Arrow -->
+        <a href="#about-us-section" class="scroll-down" style="position: absolute; bottom: 30px; color: white; text-decoration: none; z-index: 2;">
+            <i class="fas fa-chevron-down fa-2x"></i>
+        </a>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about-us-section" class="about-us-section py-5 bg-light">
+        <div class="container" style="border-radius: 8px;">
+            <h2 class="text-center mb-4"><u><b>About Us</b></u></h2>
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="https://png.pngtree.com/png-clipart/20220930/ourmid/pngtree-hand-holding-heart-symbol-icon-in-3d-rendering-png-image_6217448.png" class="img-fluid rounded" alt="Caring Hands Organization">
+                </div>
+                <div class="col-md-6">
+                    <h4>Our Mission</h4>
+                    <p>
+                        Caring Hands is dedicated to helping communities by ensuring that old and unused clothes are recycled, disposed of responsibly, or donated to those in need. 
+                        To date, we have successfully:
+                    </p>
+                    <ul class="list-unstyled">
+                        <li><strong>Recycled:</strong> 1,200+ kg of old clothes.</li>
+                        <li><strong>Disposed:</strong> 800+ kg of unusable materials in an eco-friendly manner.</li>
+                        <li><strong>Donated:</strong> Over 5,000 items to underprivileged communities.</li>
+                    </ul>
+                    <p>
+                        Together, we are making a difference by reducing waste and promoting sustainability while helping others. Thank you for your support!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <br/>
+
+    <!-- Listings Section -->
+    <h3 class="text-center">Current Entries in our store</h3>
+
+    <div class="container">
+        <div class="row">
+            <% if (allListings.length > 0) { %> 
+                <% for (let listing of allListings) { %>
+                    <div class="col-12 col-md-4 mb-4">
+                        <a href="/listings/<%= listing._id %>" class="text-decoration-none" style="color: inherit;">
+                            <div class="card" style="width: 100%; cursor: pointer;">
+                                <img src="<%= listing.image.url %>" class="card-img-top" alt="donation image">
+                                <div class="card-body">
+                                    <h5 class="card-title"><%= listing.name %></h5>
+                                    <p class="card-text"><%= listing.location %> | Items Given: <%= listing.itemsGiven || 0 %> | Items Received: <%= listing.itemsReceived || 0 %></p>
+                                    <a href="/listings/<%= listing._id %>" class="btn btn-primary">View Details</a>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                <% } %>
+            <% } else { %>
+                <div class="col-12">
+                    <p>No listings found!</p>
+                </div>
+            <% } %>
+        </div>
+    </div>
+</body>

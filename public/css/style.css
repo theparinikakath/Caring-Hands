@@ -1,0 +1,163 @@
+body{
+    font-family: "Plus Jakarta Sans",sans-serif !important;
+}
+.navbar{
+    height:5rem !important;
+    background-color: white !important;
+}
+.nav-link{
+    color:#222222 !important;
+}
+.f-info-links a{
+    text-decoration: none;
+    color: #222222;
+}
+.f-info-links a:hover{
+    text-decoration: underline;
+}
+.f-info-links,.f-info-socials,.f-info-brand{
+    width: 100%;
+    vertical-align: middle;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.f-info-socials i{
+    margin-right: 1rem;
+    font-size: 1.2rem;
+}
+.f-info{
+    text-align: center;
+    height: 8rem;
+    background-color: #ebebeb;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: space-evenly;
+}
+/*cards*/
+.card{
+    border:none !important;
+    margin-bottom: 2rem;
+
+}
+.card-img-top{
+    border-radius: 1rem !important;
+    width: 100% !important;
+    object-fit: cover !important;
+}
+.card-body{
+    padding: 0 !important;
+}
+.card-text{
+    font-size: 1.2rem !important;
+}
+.card-text p{
+    font-weight: 400;
+}
+/* Parallax Effect on the background image */
+.hero-section {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax effect */
+  }
+  
+  /* Fade-in Animation */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  
+  /* Animate text and button on load */
+  .animate-text,
+  .animate-btn {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+  
+  /* Trigger animations on page load */
+  .hero-section {
+    animation: fadeIn 2s ease-in-out;
+  }
+  
+  .hero-section .container h1 {
+    animation: textAppear 1s ease-out forwards;
+  }
+  
+  .hero-section .container p {
+    animation: textAppear 1s ease-out 0.5s forwards;
+  }
+  
+  .hero-section .container a {
+    animation: textAppear 1s ease-out 1s forwards;
+  }
+  
+  /* Text and button appear animation */
+  @keyframes textAppear {
+    0% {
+      opacity: 0;
+      transform: translateY(50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  /* Scroll down animation */
+  .scroll-down {
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0);
+    }
+    40% {
+      transform: translateY(-10px);
+    }
+    60% {
+      transform: translateY(-5px);
+    }
+  }
+/* Default styles for the navbar */
+.navbar-nav {
+  background-color: white; /* White background for the dropdown */
+}
+
+.navbar-nav .nav-link {
+  color: #333; /* Darker link color for visibility */
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: #f8f9fa; /* Optional: Light background on hover */
+}
+
+.navbar-nav .dropdown-menu {
+  background-color: white; 
+}
+
+/* Media query for screen sizes smaller than 700px */
+@media (max-width: 700px) {
+  .navbar-nav {
+      background-color: white; 
+  }
+  
+  .navbar-nav .nav-link {
+      color: #333; 
+  }
+
+  .navbar-nav .nav-link:hover {
+      background-color: #f8f9fa; 
+  }
+}
+/* MAP */
+#map { 
+  height:400px; 
+  width: 80vh;
+}
+           

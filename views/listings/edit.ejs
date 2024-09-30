@@ -1,0 +1,129 @@
+<% layout("/layouts/boilerplate") %>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit a Listing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            padding: 20px;
+            background-color: #f8f9fa;
+        }
+
+        .form-container {
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .edit-btn {
+            width: 100%;
+            background-color: #fe424d;
+            border: none;
+        }
+
+        .edit-btn:hover {
+            background-color: #fe2e3d; /* Slightly darker shade for hover */
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container form-container">
+        <h1>Edit a Listing</h1>
+        <!-- Add form validation using Bootstrap classes -->
+        <% if (listing) { %> <!-- Check if listing is defined -->
+            <form method="POST" action="/listings/<%= listing._id %>?_method=PUT" 
+                class="needs-validation" 
+                novalidate
+                enctype="multipart/form-data">
+                <!-- Name field -->
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="listing[name]" value="<%= listing.name %>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter your name.</div>
+                </div>
+
+                <!-- Age field -->
+                <div class="mb-3">
+                    <label for="age" class="form-label">Age:</label>
+                    <input type="number" class="form-control" id="age" name="listing[age]" value="<%= listing.age %>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter your age.</div>
+                </div>
+
+                <!-- Location field -->
+                <div class="mb-3">
+                    <label for="location" class="form-label">Location:</label>
+                    <input type="text" class="form-control" id="location" name="listing[location]" value="<%= listing.location %>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter your location.</div>
+                </div>
+
+                <!-- Items Given field -->
+                <div class="mb-3">
+                    <label for="itemsGiven" class="form-label">Items Given:</label>
+                    <input type="number" class="form-control" id="itemsGiven" name="listing[itemsGiven]" value="<%= listing.itemsGiven %>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter the number of items given.</div>
+                </div>
+
+                <!-- Items Received field -->
+                <div class="mb-3">
+                    <label for="itemsReceived" class="form-label">Items Received:</label>
+                    <input type="number" class="form-control" id="itemsReceived" name="listing[itemsReceived]" value="<%= listing.itemsReceived %>">
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter the number of items received.</div>
+                </div>
+
+                <!-- Contact Number field -->
+                <div class="mb-3">
+                    <label for="phone" class="form-label">Contact Number:</label>
+                    <input type="number" class="form-control" id="phone" name="listing[phone]" value="<%= listing.phone %>" required>
+                    <div class="valid-feedback">Looks good!</div>
+                    <div class="invalid-feedback">Please enter your contact number.</div>
+                </div>
+
+                <!-- Image Preview field -->
+                <div class="mb-3">
+                    Original Image:<br/>
+                    <img src="<%= originalImageUrl %>"/>
+                </div>
+
+                <!-- Image field -->
+                <div class="mb-3">
+                    <label for="image" class="form-label">Image:</label>
+                    <input type="file" class="form-control" id="image" name="listing[image]">
+                    <div class="valid-feedback"></div>
+                    <div class="invalid-feedback">Please upload a valid image</div>
+                </div>
+
+                <!-- Submit button -->
+                <button type="submit" class="btn btn-dark edit-btn mt-3">EDIT</button>
+            </form>
+        <% } else { %>
+            <p class="text-danger">Error: Listing not found.</p>
+        <% } %>
+    </div>
+
+    <!-- Bootstrap JS and Popper.js -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Optional: JavaScript to prevent submission if form is invalid -->
+    <script src="/js/script.js"></script>
+</body>
+
+</html>

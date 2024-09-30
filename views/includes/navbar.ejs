@@ -1,0 +1,89 @@
+<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top" style="background-color: white;">
+    <div class="container-fluid">
+        <!-- Brand Icon -->
+        <a class="navbar-brand" href="/listings" style="color: #ff4757; font-size: 2rem; text-decoration: none;">
+            <i class="fa-solid fa-hand-holding-heart fa-beat-fade"></i>
+        </a>
+
+        <!-- Navbar Toggler for Mobile View -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-md-3">
+                <li class="nav-item">
+                    <a class="nav-link" href="/listings">EXPLORE</a>
+                </li>
+            </ul>
+            
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"></li>
+                    <a class="nav-link" href="/listings/new">Care for my clothes</a>
+                </li>
+                <% if(!currUser) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup"><b>Signup</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                </li>
+                <% } %>
+                <% if(currUser) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><b>Logout</b></a>
+                </li>
+                <% } %>
+            </ul>
+        </div>
+    </div>
+</nav>
+<style>
+
+    /* Customize Navbar Links */
+    .navbar-nav .nav-link {
+        font-size: 1.2rem; /* Set back to standard size */
+        padding: 0.5rem 0.75rem; /* Reduced padding for links */
+    }
+
+    /* Smaller Brand Icon */
+    .navbar-brand i {
+        font-size: 2rem; /* Keep the brand icon size */
+        color: #ff4757;
+    }
+
+    /* Navbar Links hover effect */
+    .navbar-nav .nav-link:hover {
+        background-color: #f8f9fa;
+        border-radius: 5px;
+    }
+
+    /* Search button */
+    .search-btn {
+        background-color: #ff4757;
+        color:white;
+        border-radius: 25px;
+        padding: 0 1rem 0 1rem;
+        }
+        .search-btn:hover {
+        background-color: #ff4757;
+        color:white;
+        }
+    .search-btn i{
+        display: inline;
+        margin-right: 0.5rem;
+    }
+    .search-input{
+        border-radius: 25px;
+        padding: 0.5rem 3rem 0.5rem 3rem;
+        font-size: 1rem;
+    }
+
+
+
+    /* Padding to prevent overlap with the page content */
+    body {
+        padding-top: 10px; /* Adjust according to navbar height */
+    }
+</style>
