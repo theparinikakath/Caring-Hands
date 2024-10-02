@@ -3,7 +3,8 @@
 Working website : caring-hands.onrender.com/listings
 Github repo for code : https://github.com/theparinikakath/Caring-Hands/tree/new-branch
 
-## Summary : Caring Hands is a platform designed to streamline the donation, recycling, and disposal of old or unused clothing. It aims to foster sustainability and help communities in need by allowing users to easily contribute to a worthy cause. This project utilizes the MERN stack, incorporating Express.js for the backend, React for the frontend, and MongoDB for data storage.
+## Summary  
+Caring Hands is a platform designed to streamline the donation, recycling, and disposal of old or unused clothing. It aims to foster sustainability and help communities in need by allowing users to easily contribute to a worthy cause. This project utilizes the MERN stack, incorporating Express.js for the backend, React for the frontend, and MongoDB for data storage.
 
 (CHECKOUT THE NEW BRANCH FOR CODE)
 
