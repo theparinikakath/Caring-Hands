@@ -19,86 +19,71 @@
             </ul>
             
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item">
+                <li class="nav-item"></li>
                     <a class="nav-link" href="/listings/new">Care for my clothes</a>
                 </li>
-
-                <!-- ✅ Safe conditional rendering -->
-                <% if (typeof currUser === "undefined" || !currUser) { %>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/signup"><b>Signup</b></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="/login"><b>Login</b></a>
-                    </li>
-                <% } else { %>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <i class="fa-solid fa-user"></i> <%= currUser.username %>
-                        </a>
-                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="userDropdown">
-                            <li><a class="dropdown-item" href="/profile">My Profile</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="/logout"><b>Logout</b></a></li>
-                        </ul>
-                    </li>
+                <% if(!currUser) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/signup"><b>Signup</b></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/login"><b>Login</b></a>
+                </li>
+                <% } %>
+                <% if(currUser) { %>
+                <li class="nav-item">
+                    <a class="nav-link" href="/logout"><b>Logout</b></a>
+                </li>
                 <% } %>
             </ul>
         </div>
     </div>
 </nav>
-
 <style>
-    /* Navbar link styling */
+
+    /* Customize Navbar Links */
     .navbar-nav .nav-link {
-        font-size: 1.2rem;
-        padding: 0.5rem 0.75rem;
+        font-size: 1.2rem; /* Set back to standard size */
+        padding: 0.5rem 0.75rem; /* Reduced padding for links */
     }
 
-    /* Brand icon */
+    /* Smaller Brand Icon */
     .navbar-brand i {
-        font-size: 2rem;
+        font-size: 2rem; /* Keep the brand icon size */
         color: #ff4757;
     }
 
-    /* Navbar link hover */
+    /* Navbar Links hover effect */
     .navbar-nav .nav-link:hover {
         background-color: #f8f9fa;
         border-radius: 5px;
     }
 
-    /* Dropdown menu */
-    .dropdown-menu {
-        border-radius: 10px;
-        border: 1px solid #ddd;
-    }
-
-    /* Search button (if you add later) */
+    /* Search button */
     .search-btn {
         background-color: #ff4757;
-        color: white;
+        color:white;
         border-radius: 25px;
-        padding: 0 1rem;
-    }
-
-    .search-btn:hover {
+        padding: 0 1rem 0 1rem;
+        }
+        .search-btn:hover {
         background-color: #ff4757;
-        color: white;
-    }
-
-    .search-btn i {
+        color:white;
+        }
+    .search-btn i{
         display: inline;
         margin-right: 0.5rem;
     }
-
-    .search-input {
+    .search-input{
         border-radius: 25px;
-        padding: 0.5rem 3rem;
+        padding: 0.5rem 3rem 0.5rem 3rem;
         font-size: 1rem;
     }
 
-    /* Padding to prevent overlap */
+
+
+    /* Padding to prevent overlap with the page content */
     body {
-        padding-top: 10px;
+        padding-top: 10px; /* Adjust according to navbar height */
     }
 </style>
