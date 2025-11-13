@@ -32,21 +32,6 @@ main().catch((err) => {
     console.log(err);
 });
 
-//added from here ---
-// app.js
-const flash = require("connect-flash");
-
-// after your session middleware
-app.use(flash());
-
-// Global middleware to make flash messages accessible in all EJS views
-app.use((req, res, next) => {
-  res.locals.success = req.flash("success");
-  res.locals.error = req.flash("error");
-  next();
-});
-//till here ---
-
 // Middleware configuration
 app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
